@@ -777,19 +777,29 @@ anveshan-web/
   agents/
 wiki/
   README.md
-  101_doc/
-    README.md
-    01-drone-ecosystem-101.md
-    02-visual-glossary.md
-    03-ardupilot-101.md
-    04-logs-101.md
-    05-ardupilot-log-field-guide.md
-    06-forensics-101.md
-    07-useful-links.md
-  plans/
-    uav-forensics-app-plan.md
-  user_flow/
-  architecture/
+  mkdocs.yml
+  requirements.txt
+  docs/
+    index.md
+    101_doc/
+      index.md
+      01-drone-ecosystem-101.md
+      02-visual-glossary.md
+      03-ardupilot-101.md
+      04-logs-101.md
+      05-ardupilot-log-field-guide.md
+      06-forensics-101.md
+      07-useful-links.md
+    plans/
+      uav-forensics-app-plan.md
+    user_flow/
+      index.md
+    architecture/
+      index.md
+  scripts/
+    build-docs.sh
+    serve-docs.sh
+    check-links.py
 logs/
   ArduCopter-test.tlog
   ArduCopter-test-preview.txt
