@@ -1,0 +1,88 @@
+site_name: Anveshan Docs
+site_description: UAV forensics documentation for ArduPilot logs, parser artifacts, user flows, and architecture.
+docs_dir: docs
+site_dir: out
+use_directory_urls: true
+exclude_docs: |
+  README.md
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/radar
+  features:
+    - announce.dismiss
+    - content.code.annotate
+    - navigation.sections
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra:
+  generator: false
+
+extra_css:
+  - assets/stylesheets/anveshan.css
+
+nav:
+  - Home: index.md
+  - Beginner 101:
+      - Overview: 101_doc/index.md
+      - Drone Ecosystem 101: 101_doc/01-drone-ecosystem-101.md
+      - Visual Glossary: 101_doc/02-visual-glossary.md
+      - ArduPilot 101: 101_doc/03-ardupilot-101.md
+      - Logs 101: 101_doc/04-logs-101.md
+      - ArduPilot Log Field Guide: 101_doc/05-ardupilot-log-field-guide.md
+      - Forensics 101: 101_doc/06-forensics-101.md
+      - Useful Links: 101_doc/07-useful-links.md
+  - User Flows:
+      - Overview: user_flow/index.md
+      - Standard Forensic Analysis Flow: user_flow/01-standard-forensic-analysis-flow.md
+      - Rule Authoring and Case Selection: user_flow/02-rule-authoring-and-case-selection.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - FastAPI / MongoDB / React Architecture: architecture/01-fastapi-mongodb-react-architecture.md
+  - Plans:
+      - UAV Forensics App Plan: plans/uav-forensics-app-plan.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search

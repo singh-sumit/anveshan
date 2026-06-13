@@ -1,0 +1,157 @@
+:root {
+  --anveshan-ink: #172033;
+  --anveshan-muted: #526070;
+  --anveshan-panel: #f8fafc;
+  --anveshan-line: #dbe4ee;
+  --anveshan-accent: #d97706;
+  --anveshan-blue: #2563eb;
+}
+
+[data-md-color-scheme="slate"] {
+  --anveshan-ink: #f3f7fb;
+  --anveshan-muted: #b8c4d2;
+  --anveshan-panel: #172033;
+  --anveshan-line: #2a3648;
+  --anveshan-accent: #f59e0b;
+  --anveshan-blue: #60a5fa;
+}
+
+.md-header,
+.md-tabs {
+  background: #172033;
+}
+
+.md-header__title {
+  font-weight: 700;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 760;
+  letter-spacing: 0;
+}
+
+.md-typeset h1 {
+  color: var(--anveshan-ink);
+}
+
+.md-typeset a {
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 8%);
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: color-mix(in srgb, var(--anveshan-panel) 78%, var(--anveshan-blue));
+}
+
+.anveshan-hero {
+  background: var(--anveshan-panel);
+  border: 1px solid var(--anveshan-line);
+  border-left: 6px solid var(--anveshan-accent);
+  border-radius: 8px;
+  margin: 1.25rem 0 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.anveshan-hero h1 {
+  margin: 0 0 0.7rem;
+}
+
+.anveshan-hero p {
+  color: var(--anveshan-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+  max-width: 48rem;
+}
+
+.anveshan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.anveshan-button {
+  align-items: center;
+  border: 1px solid var(--anveshan-line);
+  border-radius: 8px;
+  display: inline-flex;
+  font-weight: 700;
+  min-height: 2.4rem;
+  padding: 0.55rem 0.85rem;
+}
+
+.anveshan-button.primary {
+  background: #172033;
+  border-color: #172033;
+  color: #fff;
+}
+
+.anveshan-button.secondary {
+  background: transparent;
+  color: var(--anveshan-ink);
+}
+
+[data-md-color-scheme="slate"] .anveshan-button.primary {
+  background: #f8fafc;
+  border-color: #f8fafc;
+  color: #172033;
+}
+
+.anveshan-card-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  margin: 1.2rem 0 1.8rem;
+}
+
+.anveshan-card {
+  background: var(--anveshan-panel);
+  border: 1px solid var(--anveshan-line);
+  border-radius: 8px;
+  color: var(--anveshan-ink);
+  display: block;
+  min-height: 9rem;
+  padding: 1rem;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.anveshan-card:hover {
+  border-color: var(--anveshan-blue);
+  box-shadow: 0 12px 28px rgb(15 23 42 / 12%);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.anveshan-card strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.anveshan-card span {
+  color: var(--anveshan-muted);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.anveshan-callout {
+  border: 1px solid var(--anveshan-line);
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  padding: 1rem;
+}
+
+.anveshan-callout strong {
+  color: var(--anveshan-accent);
+}
