@@ -48,5 +48,5 @@ Useful local commands in this repo:
 - [Visual Glossary](02-visual-glossary.md)
 - [ArduPilot 101](03-ardupilot-101.md)
 - [Logs 101: `.tlog` and `.bin`](04-logs-101.md)
-- [Forensics 101](05-forensics-101.md)
+- [Forensics 101](06-forensics-101.md)
 - [UAV Forensics App Plan](../plans/uav-forensics-app-plan.md)

@@ -673,7 +673,7 @@ Detailed analyst flows live in:
 ### Phase 1: Parser and Evidence Foundation
 
 - Keep `scripts/read_log.py` as a low-level inspection tool.
-- Add `core/logs_parser.py` functions for `.tlog` and `.bin`.
+- Add reusable parser services under `anveshan-api/src/anveshan_api/services/parsers/` for `.tlog` and `.bin`.
 - Produce normalized CSV/JSON from a log.
 - Record SHA256, file size, parser version, message counts, device sources, and first messages.
 - Add tests using `logs/ArduCopter-test.tlog` and `logs/sample-arducopter.bin`.
@@ -758,12 +758,23 @@ remote-id-correlation.json
 ## Suggested Repository Structure
 
 ```text
-core/
-  evidence.py
-  logs_parser.py
-  normalize.py
-  geo_rules.py
-  reports.py
+agents/
+  README.md
+anveshan-api/
+  src/anveshan_api/
+    api/
+    domain/
+    services/
+      parsers/
+    workers/
+  agents/
+  tests/
+anveshan-web/
+  src/
+    components/
+    features/
+    lib/
+  agents/
 wiki/
   README.md
   101_doc/
@@ -772,19 +783,18 @@ wiki/
     02-visual-glossary.md
     03-ardupilot-101.md
     04-logs-101.md
-    05-forensics-101.md
-    06-useful-links.md
+    05-ardupilot-log-field-guide.md
+    06-forensics-101.md
+    07-useful-links.md
   plans/
     uav-forensics-app-plan.md
+  user_flow/
+  architecture/
 logs/
   ArduCopter-test.tlog
   ArduCopter-test-preview.txt
 scripts/
   read_log.py
-tests/
-  test_logs_parser.py
-  test_normalize.py
-  test_geo_rules.py
 ```
 
 ## Immediate Next Step

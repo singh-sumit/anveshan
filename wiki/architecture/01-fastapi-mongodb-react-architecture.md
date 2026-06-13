@@ -23,27 +23,33 @@ flowchart LR
     Reports --> Store
 ```
 
+## Monorepo Layout
+
+```text
+anveshan-api/  FastAPI service and API-specific agent context
+anveshan-web/  React + Vite app and web-specific agent context
+agents/        Shared coding-agent context
+wiki/          Human-readable docs and planning
+logs/          Public sample logs
+scripts/       Utility scripts
+```
+
 ## Main Backend Modules
 
 ```text
-app/
+anveshan-api/src/anveshan_api/
   api/
-    cases.py
-    evidence.py
-    rules.py
-    analysis.py
-    reports.py
+    v1/
+      health.py
+      router.py
   domain/
-    evidence.py
-    rules.py
-    tracks.py
-    violations.py
+    models.py
   services/
-    hashing.py
-    storage.py
     parsers/
       ardupilot_tlog.py
       ardupilot_bin.py
+    hashing.py
+    storage.py
     rule_engine.py
     report_builder.py
   workers/
@@ -131,6 +137,23 @@ Map Review
   Altitude/speed chart
 ```
 
+## Frontend Modules
+
+```text
+anveshan-web/src/
+  components/
+    ui/
+  features/
+    cases/
+    rules/
+    analysis/
+  lib/
+    api.ts
+    utils.ts
+  App.tsx
+  main.tsx
+```
+
 ## deck.gl Layers
 
 Useful starting layers:
@@ -173,4 +196,3 @@ For forensic defensibility, derived data must always trace back to:
 - Rule-set version.
 - Analysis engine version.
 - Report version.
-

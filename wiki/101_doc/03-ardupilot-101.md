@@ -68,15 +68,40 @@ Flight mode matters in forensics because it gives context for pilot intent and a
 
 Common Copter modes:
 
-- `Stabilize`: pilot controls attitude, no GPS position hold.
-- `AltHold`: autopilot holds altitude, pilot controls position.
-- `Loiter`: GPS position hold.
-- `RTL`: return to launch.
-- `Auto`: follows mission waypoints.
-- `Guided`: controlled by GCS or companion computer commands.
-- `Land`: automated landing behavior.
+| Mode | Plain Meaning | What To Look For In Logs |
+| --- | --- | --- |
+| `STABILIZE` | Pilot controls attitude; no GPS position hold | RC input and pilot-control context |
+| `ALT_HOLD` | Autopilot holds altitude; pilot controls horizontal movement | Altitude, throttle, climb/descent behavior |
+| `LOITER` | GPS position hold | GPS quality and hold position |
+| `RTL` | Return To Launch | Home position, RTL altitude, reason for entering RTL |
+| `AUTO` | Follows the uploaded mission | Mission item messages such as `WP`, `RTL`, `Land`, `Takeoff` |
+| `GUIDED` | Follows commands from a GCS or companion computer | MAVLink command messages and GCS source IDs |
+| `LAND` | Automated landing behavior | Landing position, `LAND_COMPLETE`, disarm event |
+| `BRAKE` | Stop/hold quickly | Avoidance, failsafe, or pilot-command context |
 
 In logs, mode changes are important event markers. A no-fly-zone report should show where the drone was during each mode.
+
+Do not overread a mode by itself. For example, `RTL` only means return-to-launch behavior
+was active. The reason could be a mission item, pilot switch, failsafe, command from a
+ground station, or some other condition. The surrounding events and parameters matter.
+
+## Missions And Waypoints
+
+An ArduPilot mission is an ordered list of commands. In logs, common mission text includes:
+
+| Term | Meaning |
+| --- | --- |
+| `WP` | Waypoint, a GPS target in the mission |
+| `Takeoff` | Automatic takeoff command |
+| `Land` | Automatic landing command |
+| `RTL` | Return-to-launch mission command |
+| `SplineWP` | Curved waypoint path |
+| `LoitTurns` | Loiter/circle for a configured number of turns |
+| `Reached command #N` | Autopilot considered mission command `N` complete |
+
+For forensics, mission terms help explain whether movement was autonomous, manually guided,
+or part of a planned route. They do not prove who uploaded the mission unless separate
+ground-station evidence supports that.
 
 ## Parameters
 
@@ -103,7 +128,23 @@ SERIAL*
 GPS*
 COMPASS*
 ARMING_*
+BRD_*
+INS_*
+SYSID_*
 ```
+
+Parameter examples:
+
+| Parameter Family | What It Can Help Explain |
+| --- | --- |
+| `FLTMODE*` | Which flight modes were assigned to a mode switch |
+| `FENCE_*` | Geofence enabled state, fence type, radius, altitude limits, action |
+| `FS_*` | Failsafe thresholds and actions |
+| `RTL_*` | Return-to-launch altitude and behavior |
+| `LOG_*` | Logging behavior |
+| `BRD_*` | Board-level settings, sometimes board serial parameter |
+| `INS_*` / `COMPASS*` | IMU and compass configuration/device identifiers |
+| `SYSID_*` | MAVLink vehicle and ground-station system IDs |
 
 ## Why ArduPilot Is Good for a First Forensic MVP
 
@@ -117,4 +158,3 @@ ArduPilot is a good first scope because:
 - Public sample logs are available from ArduPilot autotest.
 
 The first app can avoid proprietary DJI extraction and still prove the forensic workflow.
-

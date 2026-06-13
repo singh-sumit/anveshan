@@ -64,6 +64,8 @@ Sometimes available:
 
 - Firmware version.
 - Board information.
+- Board serial parameter or hardware UID candidates.
+- IMU, compass, and GPS device identifiers.
 - Parameters.
 - Geofence settings.
 - Mission waypoints.
@@ -75,9 +77,15 @@ Usually not inside the log:
 
 - Actual photos or videos.
 - Pilot identity.
+- Confirmed owner identity.
+- Legal authorization records.
 - Legal authorization status.
 - Full intent.
 - All ground-station UI actions.
+
+Treat firmware, serial parameters, and UID-like fields as trace evidence. They can help link
+logs, hardware, and parser artifacts, but they do not by themselves identify a pilot or prove
+authorization status. Values such as `0`, `-1`, or blank strings often mean unset/default.
 
 ## No-Fly-Zone Analysis
 

@@ -22,12 +22,17 @@ This folder is the beginner learning path for the project. It assumes no prior d
    - Which messages matter for forensics.
    - How to inspect sample logs.
 
-5. [Forensics 101](05-forensics-101.md)
+5. [ArduPilot Log Field Guide](05-ardupilot-log-field-guide.md)
+   - How to read `report.md`, `map.html`, `events.json`, and `track.csv`.
+   - What `WP`, `RTL`, `AUTO`, `GUIDED`, `EKF`, `PARM`, `VER`, and `MODE` mean.
+   - How to interpret firmware, serial parameters, UID candidates, and quality warnings.
+
+6. [Forensics 101](06-forensics-101.md)
    - How to preserve evidence.
    - How to reconstruct a flight.
    - What a simple no-fly-zone check needs.
 
-6. [Useful Links](06-useful-links.md)
+7. [Useful Links](07-useful-links.md)
    - Official docs and tools worth keeping nearby.
 
 ## Mental Model
