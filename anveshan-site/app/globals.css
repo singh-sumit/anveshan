@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050505;
+  --surface: #0a0a0a;
+  --divider: #1a1a1a;
+  --divider-light: #333333;
+  --text-primary: #e0e0e0;
+  --text-secondary: #888888;
+  --text-tertiary: #666666;
+  --text-quaternary: #444444;
+  --accent: #ff5722;
+  --accent-hover: #e64a19;
+}
+
+.theme-light {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --divider: #e5e5e5;
+  --divider-light: #cccccc;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-tertiary: #777777;
+  --text-quaternary: #999999;
+  --accent: #ff5722;
+  --accent-hover: #e64a19;
+}
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-divider: var(--divider);
+  --color-divider-light: var(--divider-light);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-tertiary: var(--text-tertiary);
+  --color-quaternary: var(--text-quaternary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --animate-scan: scan 3s ease-in-out infinite;
+
+  @keyframes scan {
+    0%,
+    100% {
+      top: 0%;
+      opacity: 0;
+    }
+
+    10%,
+    90% {
+      opacity: 0.5;
+    }
+
+    50% {
+      top: 100%;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-primary antialiased selection:bg-accent/30 selection:text-accent;
+  }
+}
