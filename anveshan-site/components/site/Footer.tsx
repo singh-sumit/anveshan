@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-4 mb-8">
-              <Logo className="h-12 md:h-14 w-auto text-accent" />
+              <Logo className="h-16 md:h-20 w-auto text-accent opacity-95 drop-shadow-[0_0_12px_rgba(255,94,46,0.14)]" />
             </div>
             <p className="text-tertiary text-sm font-light leading-relaxed">
               Next-generation digital forensics and incident response. Built for truth.

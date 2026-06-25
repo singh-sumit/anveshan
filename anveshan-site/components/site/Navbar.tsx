@@ -21,9 +21,9 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-divider">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-28 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-4">
-          <Logo className="h-10 md:h-11 w-auto text-accent" />
+          <Logo className="h-14 md:h-[4.5rem] w-auto text-accent opacity-95 drop-shadow-[0_0_10px_rgba(255,94,46,0.14)]" />
         </Link>
         
         <div className="hidden md:flex items-center gap-12 text-[11px] font-mono tracking-[0.2em] uppercase text-secondary">
