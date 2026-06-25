@@ -44,9 +44,9 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-32 relative overflow-hidden border-b border-divider">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="max-w-2xl mb-24">
+    <section id="features" className="py-20 md:py-32 relative overflow-hidden border-b border-divider">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="max-w-2xl mb-14 md:mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,13 +60,13 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[40px] md:text-[60px] font-black tracking-tighter text-primary leading-none uppercase"
+            className="text-[32px] sm:text-[40px] md:text-[60px] font-black tracking-tighter text-primary leading-none uppercase"
           >
             Forensic Precision<br/>At Enterprise Scale
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-12 gap-y-10 md:gap-y-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}

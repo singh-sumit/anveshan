@@ -38,26 +38,26 @@ export default function Security() {
   ];
 
   return (
-    <main className="flex-1 pt-24">
+    <main className="flex-1 pt-24 md:pt-28">
       {/* Hero */}
-      <section className="py-24 border-b border-divider relative overflow-hidden bg-background">
+      <section className="py-16 md:py-24 border-b border-divider relative overflow-hidden bg-background">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] select-none pointer-events-none">
-          <h1 className="text-[150px] md:text-[250px] font-black tracking-tighter whitespace-nowrap">SECURITY.</h1>
+          <h1 className="text-[88px] sm:text-[120px] md:text-[250px] font-black tracking-tighter whitespace-nowrap">SECURITY.</h1>
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
-          <h1 className="text-[60px] md:text-[80px] font-black leading-[0.85] tracking-tighter text-primary mb-8 uppercase">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 text-center">
+          <h1 className="text-[38px] sm:text-[52px] md:text-[80px] font-black leading-[0.85] tracking-tighter text-primary mb-6 md:mb-8 uppercase">
             Military-Grade <span className="text-accent">Integrity.</span>
           </h1>
-          <p className="text-lg text-secondary leading-relaxed font-light max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-secondary leading-relaxed font-light max-w-2xl mx-auto">
             Evidentiary integrity is the bedrock of digital forensics. Anveshan secures evidence from the point of acquisition to the final courtroom presentation.
           </p>
         </div>
       </section>
 
       {/* Grid */}
-      <section className="py-24 border-b border-divider bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <section className="py-16 md:py-24 border-b border-divider bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {securityFeatures.map((feature, idx) => (
               <motion.div 
                 key={idx}

@@ -38,17 +38,17 @@ export default function PipelinePage() {
   ];
 
   return (
-    <main className="flex-1 pt-24">
+    <main className="flex-1 pt-24 md:pt-28">
       {/* Hero */}
-      <section className="py-24 border-b border-divider relative overflow-hidden bg-background">
+      <section className="py-16 md:py-24 border-b border-divider relative overflow-hidden bg-background">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] select-none pointer-events-none">
-          <h1 className="text-[150px] md:text-[250px] font-black tracking-tighter whitespace-nowrap">WORKFLOW.</h1>
+          <h1 className="text-[88px] sm:text-[120px] md:text-[250px] font-black tracking-tighter whitespace-nowrap">WORKFLOW.</h1>
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
-          <h1 className="text-[60px] md:text-[80px] font-black leading-[0.85] tracking-tighter text-primary mb-8 uppercase">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 text-center">
+          <h1 className="text-[38px] sm:text-[52px] md:text-[80px] font-black leading-[0.85] tracking-tighter text-primary mb-6 md:mb-8 uppercase">
             Investigation <span className="text-accent">Pipeline.</span>
           </h1>
-          <p className="text-lg text-secondary leading-relaxed font-light max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-secondary leading-relaxed font-light max-w-2xl mx-auto">
             A linear, methodical progression from raw byte acquisition to structured intelligence reporting, ensuring speed without compromising evidentiary integrity.
           </p>
         </div>
@@ -58,18 +58,18 @@ export default function PipelinePage() {
       <Pipeline />
 
       {/* Deep Dive Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="space-y-24">
+      <section className="py-16 md:py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="space-y-16 md:space-y-24">
             {steps.map((step, idx) => (
-              <div key={idx} className={`flex flex-col lg:flex-row gap-12 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+              <div key={idx} className={`flex flex-col lg:flex-row gap-8 md:gap-12 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                 <motion.div 
                   initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   className="lg:w-1/2"
                 >
-                  <div className="text-[120px] font-black text-divider leading-none select-none">
+                  <div className="text-[72px] sm:text-[96px] md:text-[120px] font-black text-divider leading-none select-none text-center lg:text-left">
                     {step.id}
                   </div>
                 </motion.div>

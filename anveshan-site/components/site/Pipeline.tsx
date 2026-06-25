@@ -32,18 +32,18 @@ export default function Pipeline() {
   ];
 
   return (
-    <section id="pipeline" className="py-32 border-b border-divider">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-24">
+    <section id="pipeline" className="py-20 md:py-32 border-b border-divider">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="mb-14 md:mb-24">
           <h2 className="text-[10px] font-mono text-quaternary tracking-[0.3em] uppercase mb-6">
             Analysis Pipeline
           </h2>
-          <p className="text-[40px] md:text-[60px] font-black tracking-tighter text-primary leading-none uppercase">
+          <p className="text-[32px] sm:text-[40px] md:text-[60px] font-black tracking-tighter text-primary leading-none uppercase">
             From Raw Data<br/>To Court Ready
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}

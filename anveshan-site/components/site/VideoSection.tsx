@@ -7,14 +7,14 @@ import { Play, Scan, Focus, Cpu } from 'lucide-react';
 
 export default function VideoSection() {
   return (
-    <section className="py-32 border-b border-divider relative overflow-hidden bg-background">
+    <section className="py-20 md:py-32 border-b border-divider relative overflow-hidden bg-background">
       {/* Minimal background elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] select-none pointer-events-none">
-        <h1 className="text-[150px] md:text-[250px] font-black tracking-tighter whitespace-nowrap">VISUAL.INTEL</h1>
+        <h1 className="text-[88px] sm:text-[120px] md:text-[250px] font-black tracking-tighter whitespace-nowrap">VISUAL.INTEL</h1>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -26,11 +26,11 @@ export default function VideoSection() {
               <span className="text-[11px] font-mono tracking-[0.3em] uppercase text-tertiary">Module: Video Forensics</span>
             </div>
             
-            <h2 className="text-[40px] md:text-[60px] font-black leading-[0.85] tracking-tighter text-primary mb-8 uppercase">
+            <h2 className="text-[32px] sm:text-[40px] md:text-[60px] font-black leading-[0.85] tracking-tighter text-primary mb-6 md:mb-8 uppercase">
               Multimedia<br/><span className="text-accent">Analysis.</span>
             </h2>
             
-            <p className="text-lg text-secondary leading-relaxed font-light mb-12">
+            <p className="text-base sm:text-lg text-secondary leading-relaxed font-light mb-8 md:mb-12">
               Advanced frame-by-frame analysis of CCTV, drone footage, and mobile video. Employ AI-driven enhancement, deepfake detection, and object tracking to extract actionable intelligence from degraded visual evidence.
             </p>
 
@@ -84,12 +84,12 @@ export default function VideoSection() {
                 {/* HUD Overlay Elements */}
                 <div className="absolute inset-0 border border-accent/20 pointer-events-none">
                   {/* Target Box */}
-                  <div className="absolute top-[30%] left-[40%] w-32 h-32 border border-accent opacity-50 group-hover:scale-110 transition-transform duration-500">
+                  <div className="absolute top-[30%] left-[40%] w-20 h-20 sm:w-32 sm:h-32 border border-accent opacity-50 group-hover:scale-110 transition-transform duration-500">
                     <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-accent" />
                     <div className="absolute -top-1 -right-1 w-2 h-2 border-t border-r border-accent" />
                     <div className="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-accent" />
                     <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-accent" />
-                    <span className="absolute -top-5 left-0 text-accent text-[8px] font-mono tracking-widest uppercase">ID_MATCH: 98.4%</span>
+                    <span className="absolute -top-4 sm:-top-5 left-0 text-accent text-[7px] sm:text-[8px] font-mono tracking-widest uppercase">ID_MATCH: 98.4%</span>
                   </div>
                 </div>
 
@@ -99,7 +99,7 @@ export default function VideoSection() {
                 </div>
               </div>
 
-              <div className="mt-4 flex justify-between items-center px-2">
+              <div className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-4 justify-between sm:items-center px-2">
                 <span className="text-[10px] font-mono text-accent uppercase tracking-widest">Feed: CAM_04_SOUTH</span>
                 <span className="text-[10px] font-mono text-quaternary uppercase tracking-widest">Rec: 04:22:11 GMT</span>
               </div>

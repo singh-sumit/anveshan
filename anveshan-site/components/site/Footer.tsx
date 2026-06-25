@@ -18,8 +18,8 @@ const FOOTER_SECTIONS = [
 export default function Footer() {
   return (
     <footer className="bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-4 mb-8">
               <Logo className="h-16 md:h-20 w-auto text-accent opacity-95 drop-shadow-[0_0_12px_rgba(255,94,46,0.14)]" />
@@ -49,11 +49,11 @@ export default function Footer() {
       </div>
 
       {/* Solid green footer status bar */}
-      <div className="h-12 bg-accent flex items-center px-6 lg:px-12 justify-between">
+      <div className="min-h-12 bg-accent flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center px-4 sm:px-6 lg:px-12 py-3 sm:py-0 justify-between">
         <div className="text-black font-mono text-[10px] font-bold tracking-[0.2em] uppercase hidden sm:block">
           System Integrity: Verified // AES-256 Active
         </div>
-        <div className="flex gap-4 sm:gap-8 text-black font-mono text-[10px] font-bold uppercase w-full sm:w-auto justify-between sm:justify-end">
+        <div className="flex flex-wrap gap-3 sm:gap-8 text-black font-mono text-[10px] font-bold uppercase w-full sm:w-auto justify-between sm:justify-end">
           <span>Session: #9122</span>
           <span className="hidden sm:inline">Loc: 127.0.0.1</span>
           <span>&copy; {new Date().getFullYear()}</span>
